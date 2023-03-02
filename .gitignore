@@ -1,0 +1,29 @@
+/.idea
+/React_Pure.iml
+
+/js/vendor/babel.min.js
+/js/vendor/react/react-dom@16.14.dev.js
+/js/vendor/react/react@16.14.dev.js
+# Created by https://www.toptal.com/developers/gitignore/api/react
+# Edit at https://www.toptal.com/developers/gitignore?templates=react
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+
+# End of https://www.toptal.com/developers/gitignore/api/react
+# 프로젝트 제외 경로
+/dist/

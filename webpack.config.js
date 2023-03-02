@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    devtool: "source-map",
     entry: "./src/index.js", //진입(시작) 파일
     output: {
         path: path.join(__dirname, "dist"), //번들파일 저장위치
@@ -9,7 +10,14 @@ module.exports = {
     },
     module: { //각 파일에 대한 세부적인 번들링 작업 정의
         rules: [{ test: /\.js$/, //확장자가 .js로 끝나는 파일에 대한 규칙정의
-            exclude: /node_modules/, loader: "babel-loader" }]
+            exclude: /node_modules/, loader: "babel-loader" },
+            // 그림파일에 대한 세부적 번들링작업 (이미지 규칙)
+            {
+                test: /\.(png|jpe?g|gif|svg|ico)$/i,
+                use: [{ loader: "file-loader", },],},
+        ]
+
+
     },
     devServer: {// npm start명령어로 서버 구동 시 필요한 관련 내용 설정
         static: path.join(__dirname, 'dist'),
